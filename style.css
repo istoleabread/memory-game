@@ -1,0 +1,238 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Ubuntu', sans-serif;
+}
+
+.wrapper {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #222831;
+    background: url('https://assets-global.website-files.com/5a9423a3f702750001758d4f/64ddbec690d3da8a292418d8_%20-%2012.png');
+    background-position: 0%;
+    background-size: 200%;
+    animation: bg-transform 10s infinite ease-in-out;
+}
+
+@keyframes bg-transform {
+    0% {
+        background-position: 0%;
+    }
+
+    50% {
+        background-position: 100%;
+    }
+}
+
+#landingPage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    color: #eee;
+    transition: .8s;
+    transform-origin: top left;
+
+    & p {
+        font-size: 2.2rem;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    & img {
+        width: 80%;
+        border-radius: 15px;
+        box-shadow: 2px 2px 20px rgba(238, 238, 238, .6);
+        transition: .2s;
+        max-width: 700px;
+
+        &:hover {
+            box-shadow: 2px 2px 40px rgba(238, 238, 238, .8);
+        }
+    }
+
+    & button {
+        padding: 15px 30px;
+        border-radius: 10px;
+        background-color: #232256;
+        font-size: 1rem;
+        margin-top: 10px;
+        color: #eee;
+        cursor: pointer;
+        border: none;
+        transform: translateY(-2px);
+        transition: .3s;
+        will-change: transform;
+
+        &:hover {
+            background-color: rgba(35, 34, 86, .8);
+        }
+
+        &:active {
+            transform: translateY(2px);
+        }
+    }
+}
+
+#popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+    transform: translateY(100%);
+    backdrop-filter: blur(100px) saturate(80%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #eee;
+    padding: 40px;
+    border-radius: 10px;
+    width: 70%;
+    max-width: 700px;
+    transition: .7s;
+    opacity: 0.3;
+    transform-origin: top left;
+
+    & h2 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    & img {
+        width: 100%;
+        align-self: center;
+        margin-bottom: 25px;
+        border-radius: 10px;
+    }
+
+    & label {
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    & input {
+        margin-bottom: 10px;
+        border: none;
+        background-color: transparent;
+        border-bottom: 1px solid #eee;
+        outline: none;
+        color: #eee;
+        font-size: 1rem;
+    }
+
+    & button {
+        margin-top: 10px;
+        width: max-content;
+        padding: 8px 16px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .errorMsg {
+        font-weight: 600;
+        margin-bottom: 10px;
+
+        .error {
+            color: rgb(225, 0, 0);
+        }
+    }
+
+    .errorMsg:empty {
+        display: none;
+    }
+
+    .notes ul li {
+        margin: 6px;
+        color: #ccc;
+    }
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    transform: translateX(100vw);
+    opacity: 0;
+    transition: .8s;
+    color: #eee;
+    margin: 30px 0px;
+    backdrop-filter: blur(16px) saturate(60%);
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.singleRow {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    perspective: 300;
+}
+
+.imgWrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    border-radius: 20px;
+}
+
+.imgWrapper:empty {
+    display: none;
+}
+
+.imageDiv {
+    position: relative;
+    transition: .4s linear;
+    transform-style: preserve-3d;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    background-color: dodgerblue;
+    border-radius: 10px;
+}
+
+.box {
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.front {
+    background: url("https://img.freepik.com/premium-vector/vector-seamless-pattern-question-marks-quiz-background_574806-1824.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.singleImage {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+}

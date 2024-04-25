@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Memory Game</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="https://img.freepik.com/free-vector/thoughtful-woman-with-laptop-looking-big-question-mark_1150-39362.jpg"
+        />
+    </head>
+    <body>
+        <div class="wrapper">
+            <div id="landingPage">
+                <p>Memory Game!</p>
+                <img
+                    src="https://img.freepik.com/premium-vector/hand-drawn-question-mark-pattern_23-2149410460.jpg"
+                    alt="Memory Game"
+                />
+                <button type="button" id="gameStart">Start Game</button>
+            </div>
+
+            <div id="popup">
+                <h2>Customize your game</h2>
+                <img
+                    src="https://img.freepik.com/free-photo/mystery-box-with-surprise-interior_52683-101067.jpg"
+                    alt="Quiz Box"
+                />
+                <span class="errorMsg"></span>
+                <div class="notes">
+                    <ul>
+                        <li>Row and column count cannot be less than 1</li>
+                        <li>Row and column count cannot be greater than 10</li>
+                        <li>Product of row and column count shall not be odd</li>
+                    </ul>
+                </div>
+                <label for="rows">Enter number of rows</label>
+                <input type="number" id="rows" max="10" min="1" value="4" />
+                <label for="columns">Enter number of columns</label>
+                <input type="number" id="columns" max="10" min="1" value="5" />
+                <button type="button" id="startBtn">Start Game</button>
+            </div>
+
+            <div class="game">
+                <h1>Score: <span id="score">0</span></h1>
+                <div class="imgWrapper"></div>
+            </div>
+        </div>
+
+        <script src="images.js"></script>
+        <script src="script.js" async defer></script>
+    </body>
+</html>
